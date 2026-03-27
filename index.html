@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="gkqLk0d-8euq0aOhIHSHMbVq1DGzd1TVI8TEpH9_P-U" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>SeaCV Pro &mdash; Professional Maritime CVs, Powered by AI</title>
+    <meta name="description" content="Get a recruiter-ready maritime CV in minutes. AI-powered, ATS-friendly CVs for Deck Officers, Engine Officers, and Ratings. From $15.">
+    <meta name="keywords" content="maritime CV, seafarer resume, marine engineer CV, deck officer CV, maritime CV service, seaman CV, merchant navy resume, ATS maritime CV, maritime career">
+    <meta property="og:title" content="SeaCV Pro — Professional Maritime CVs, Powered by AI">
+    <meta property="og:description" content="AI-powered maritime CVs for Deck Officers, Engine Officers, and Ratings. Recruiter-ready in minutes, from $15.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://seacvpro.netlify.app/og-image.png">
+    <meta property="og:url" content="https://seacvpro.netlify.app">
+    <meta name="twitter:title" content="SeaCV Pro — Professional Maritime CVs, Powered by AI">
+    <meta name="twitter:description" content="AI-powered maritime CVs for Deck Officers, Engine Officers, and Ratings. From $15.">
+    <meta name="twitter:image" content="https://seacvpro.netlify.app/og-image.png">
+    <link rel="canonical" href="https://seacvpro.netlify.app">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #0a192f;
+            --primary-light: #112240;
+            --primary-lighter: #1d3557;
+            --accent: #64ffda;
+            --accent-dim: rgba(100,255,218,0.1);
+            --text: #e6f1ff;
+            --text-dim: #8892b0;
+            --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.85; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; border: none; text-align: center; font-family: inherit; }
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-primary:hover { background: #45e6c0; opacity: 1; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(100,255,218,0.25); }
+        .btn-outline { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+        .btn-outline:hover { background: var(--accent-dim); opacity: 1; }
+        .section-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; font-weight: 600; color: var(--accent); text-align: center; margin-bottom: 12px; }
+        .section-title { font-size: 2.2rem; font-weight: 800; text-align: center; margin-bottom: 16px; }
+        .section-subtitle { text-align: center; color: var(--text-dim); max-width: 620px; margin: 0 auto 56px; font-size: 1.05rem; }
+        .accent { color: var(--accent); }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 18px 0; transition: all 0.3s; }
+        nav.scrolled { background: rgba(10,25,47,0.97); backdrop-filter: blur(12px); box-shadow: 0 2px 30px rgba(0,0,0,0.4); padding: 12px 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--white); }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+        .nav-links a { color: var(--text-dim); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); opacity: 1; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); transition: all 0.3s; }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 80px; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(100,255,218,0.05) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(100,255,218,0.03) 0%, transparent 50%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 720px; }
+        .hero-label { display: inline-block; background: var(--accent-dim); color: var(--accent); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; border: 1px solid rgba(100,255,218,0.2); }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 36px; max-width: 560px; line-height: 1.7; }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .wave-decoration { position: absolute; bottom: -2px; left: 0; width: 100%; }
+        .wave-decoration svg { display: block; width: 100%; height: 80px; }
+        .floating-shapes { position: absolute; top: 0; right: 0; width: 50%; height: 100%; pointer-events: none; z-index: 1; }
+        .shape { position: absolute; border: 2px solid rgba(100,255,218,0.12); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+        .shape-1 { width: 300px; height: 300px; top: 15%; right: 5%; }
+        .shape-2 { width: 200px; height: 200px; top: 45%; right: 20%; animation-delay: -2s; }
+        .shape-3 { width: 120px; height: 120px; top: 25%; right: 30%; animation-delay: -4s; border-radius: 20%; }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+
+        /* HOW IT WORKS */
+        .how-it-works { background: var(--primary-light); }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .step { text-align: center; padding: 40px 24px; border-radius: 12px; background: var(--primary); border: 1px solid rgba(100,255,218,0.08); transition: all 0.3s; position: relative; }
+        .step:hover { border-color: rgba(100,255,218,0.2); transform: translateY(-4px); }
+        .step-number { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--primary); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+        .step-icon { width: 64px; height: 64px; margin: 16px auto 20px; background: var(--accent-dim); border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+        .step-icon svg { width: 32px; height: 32px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .step h3 { font-size: 1.15rem; margin-bottom: 10px; font-weight: 700; }
+        .step p { color: var(--text-dim); font-size: 0.95rem; }
+
+        /* FEATURES */
+        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .feature-card { padding: 32px; border-radius: 12px; background: var(--primary-light); border: 1px solid rgba(100,255,218,0.08); transition: all 0.3s; }
+        .feature-card:hover { border-color: rgba(100,255,218,0.2); transform: translateY(-2px); }
+        .feature-icon { width: 48px; height: 48px; background: var(--accent-dim); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+        .feature-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .feature-card h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 700; }
+        .feature-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+
+        /* PRICING */
+        .pricing { background: var(--primary-light); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 800px; margin: 0 auto; }
+        .price-card { background: var(--primary); border: 1px solid rgba(100,255,218,0.1); border-radius: 16px; padding: 40px 32px; position: relative; transition: all 0.3s; display: flex; flex-direction: column; }
+        .price-card:hover { transform: translateY(-4px); }
+        .price-card.featured { border-color: var(--accent); box-shadow: 0 0 40px rgba(100,255,218,0.1); }
+        .price-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--primary); padding: 4px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+        .price-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .price-card .price { font-size: 3rem; font-weight: 800; margin: 16px 0 24px; }
+        .price-card .price small { font-size: 1rem; color: var(--text-dim); font-weight: 400; }
+        .price-features { list-style: none; margin-bottom: 32px; flex-grow: 1; }
+        .price-features li { padding: 8px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: var(--text-dim); }
+        .check { color: var(--accent); font-size: 1rem; min-width: 20px; }
+        .price-card .btn { width: 100%; }
+
+        /* SAMPLE CV */
+        .cv-preview-wrapper { max-width: 680px; margin: 0 auto; }
+        .cv-preview { background: var(--white); border-radius: 12px; padding: 40px; color: #1a1a2e; box-shadow: 0 20px 60px rgba(0,0,0,0.4); position: relative; overflow: hidden; }
+        .cv-preview::before { content: 'SAMPLE'; position: absolute; top: 20px; right: -30px; background: var(--accent); color: var(--primary); padding: 4px 40px; font-size: 0.75rem; font-weight: 700; transform: rotate(45deg); letter-spacing: 1px; }
+        .cv-header-block { border-bottom: 3px solid var(--primary); padding-bottom: 16px; margin-bottom: 20px; }
+        .cv-header-block h3 { font-size: 1.5rem; color: var(--primary); margin-bottom: 4px; }
+        .cv-header-block p { color: #555; font-size: 0.9rem; }
+        .cv-section { margin-bottom: 16px; }
+        .cv-section h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-bottom: 8px; font-weight: 700; }
+        .cv-section p, .cv-section li { font-size: 0.85rem; color: #444; line-height: 1.5; }
+        .cv-section ul { list-style: none; padding: 0; }
+        .cv-section li { padding: 2px 0; padding-left: 16px; position: relative; }
+        .cv-section li::before { content: '\25AA'; position: absolute; left: 0; color: var(--primary); }
+        .cv-cta { text-align: center; margin-top: 32px; }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--primary-light); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+        .testimonial-card { background: var(--primary); border: 1px solid rgba(100,255,218,0.08); border-radius: 12px; padding: 32px; }
+        .testimonial-stars { color: #ffd700; margin-bottom: 12px; font-size: 1.1rem; letter-spacing: 2px; }
+        .testimonial-card p { color: var(--text-dim); font-style: italic; margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6; }
+        .testimonial-author { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+        .testimonial-role { font-size: 0.8rem; color: var(--text-dim); }
+
+        /* FAQ */
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border: 1px solid rgba(100,255,218,0.1); border-radius: 10px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.3s; }
+        .faq-item.active { border-color: rgba(100,255,218,0.3); }
+        .faq-question { width: 100%; padding: 20px 24px; background: var(--primary-light); border: none; color: var(--text); font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; transition: background 0.3s; }
+        .faq-question:hover { background: var(--primary-lighter); }
+        .faq-question .icon { font-size: 1.4rem; color: var(--accent); transition: transform 0.3s; min-width: 24px; text-align: center; }
+        .faq-item.active .faq-question .icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+        .faq-answer-inner { padding: 0 24px 20px; color: var(--text-dim); line-height: 1.7; font-size: 0.95rem; }
+
+        /* CTA BANNER */
+        .cta-banner { background: linear-gradient(135deg, var(--primary-lighter) 0%, var(--primary-light) 100%); text-align: center; border-top: 1px solid rgba(100,255,218,0.1); }
+        .cta-banner h2 { font-size: 2rem; margin-bottom: 16px; }
+        .cta-banner p { color: var(--text-dim); margin-bottom: 32px; font-size: 1.05rem; }
+        .cta-banner .btn { margin: 0 8px; }
+
+        /* FOOTER */
+        footer { background: #060e1c; padding: 48px 0 24px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand .logo { margin-bottom: 12px; display: inline-block; }
+        .footer-brand p { color: var(--text-dim); font-size: 0.9rem; max-width: 300px; line-height: 1.6; }
+        .footer-col h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; color: var(--text); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--text-dim); font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom { border-top: 1px solid rgba(100,255,218,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { color: var(--text-dim); font-size: 0.85rem; }
+        .social-links { display: flex; gap: 16px; }
+        .social-links a { color: var(--text-dim); font-size: 0.9rem; }
+
+        /* WHATSAPP FLOATING BUTTON */
+        .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 56px; height: 56px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.3s, box-shadow 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); opacity: 1; }
+        .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.4rem; }
+            .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .features-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+            .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-brand p { max-width: 100%; }
+            .footer-bottom { justify-content: center; text-align: center; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10,25,47,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 1.2rem; }
+            .hamburger { display: flex; z-index: 1001; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.7rem; }
+            .floating-shapes { display: none; }
+            section { padding: 60px 0; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "SeaCV Pro",
+        "description": "AI-powered professional maritime CV service for Deck Officers, Engine Officers, and Ratings",
+        "url": "https://seacvpro.netlify.app",
+        "brand": {"@type": "Brand", "name": "SeaCV Pro"},
+        "offers": [
+            {"@type": "Offer", "name": "Basic Package", "price": "15.00", "priceCurrency": "USD", "description": "Professional Maritime CV (PDF)"},
+            {"@type": "Offer", "name": "Premium Package", "price": "25.00", "priceCurrency": "USD", "description": "CV + Cover Letter + LinkedIn Profile Optimization"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How long does it take to receive my CV?", "acceptedAnswer": {"@type": "Answer", "text": "Your CV is delivered via email within 15 minutes of submitting your details."}},
+            {"@type": "Question", "name": "What departments do you cover?", "acceptedAnswer": {"@type": "Answer", "text": "We cover Engine Department, Deck Department, and Ratings across all vessel types."}},
+            {"@type": "Question", "name": "Is the CV ATS-friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, all CVs are optimized for Applicant Tracking Systems used by major crewing agencies and ship management companies."}},
+            {"@type": "Question", "name": "Can I request revisions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, simply reply to the delivery email and we will make adjustments to your CV."}}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Sea<span>CV</span> Pro</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#how-it-works" onclick="closeMenu()">How It Works</a></li>
+                <li><a href="#features" onclick="closeMenu()">Why Us</a></li>
+                <li><a href="#pricing" onclick="closeMenu()">Pricing</a></li>
+                <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+                <li><a href="#pricing" class="btn btn-primary" style="padding:10px 24px;font-size:0.9rem" onclick="closeMenu()">Get Your CV</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Built for Seafarers, by a Marine Engineer</div>
+                <h1>Get a Job-Ready Maritime CV in <span class="accent">5 Minutes</span></h1>
+                <p>Built for AB, Bosun, Officers & Ratings. Designed to pass crewing agency screening. Delivered to your email instantly.</p>
+                <div class="hero-buttons">
+                    <a href="#pricing" class="btn btn-primary">Generate My Maritime CV</a>
+                    <a href="#sample" class="btn btn-outline">View Sample CV</a>
+                </div>
+            </div>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="wave-decoration">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#112240"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section style="background:var(--primary-light);padding:24px 0;border-bottom:1px solid rgba(100,255,218,0.08);">
+        <div class="container" style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;text-align:center;">
+            <div style="display:flex;align-items:center;gap:8px;color:var(--accent);font-size:0.95rem;font-weight:600;">
+                <span style="font-size:1.1rem;">&#10003;</span> Used by tanker & bulk carrier crew
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;color:var(--accent);font-size:0.95rem;font-weight:600;">
+                <span style="font-size:1.1rem;">&#10003;</span> STCW & SIRE-ready format
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;color:var(--accent);font-size:0.95rem;font-weight:600;">
+                <span style="font-size:1.1rem;">&#10003;</span> Designed for crewing agencies
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section style="padding:64px 0;">
+        <div class="container" style="max-width:800px;">
+            <p class="section-label">The Problem</p>
+            <h2 class="section-title">Why Most Seafarer CVs Get <span class="accent">Rejected</span></h2>
+            <p class="section-subtitle">Crewing agencies screen hundreds of CVs daily. Here's why most don't make it through.</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;">
+                <div style="background:var(--primary-light);border:1px solid rgba(255,100,100,0.15);border-radius:12px;padding:28px 20px;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:12px;opacity:0.8;">&#10006;</div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;color:var(--text);">Wrong Format</h3>
+                    <p style="color:var(--text-dim);font-size:0.9rem;">Generic Word templates that crewing agencies can't parse properly.</p>
+                </div>
+                <div style="background:var(--primary-light);border:1px solid rgba(255,100,100,0.15);border-radius:12px;padding:28px 20px;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:12px;opacity:0.8;">&#10006;</div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;color:var(--text);">Missing Sea Service Structure</h3>
+                    <p style="color:var(--text-dim);font-size:0.9rem;">No proper vessel table, missing GT/DWT, incomplete dates and ranks.</p>
+                </div>
+                <div style="background:var(--primary-light);border:1px solid rgba(255,100,100,0.15);border-radius:12px;padding:28px 20px;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:12px;opacity:0.8;">&#10006;</div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;color:var(--text);">Too Generic</h3>
+                    <p style="color:var(--text-dim);font-size:0.9rem;">Copy-paste job descriptions instead of impact-based achievements with real numbers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <p class="section-label">Simple Process</p>
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three simple steps to your professional maritime CV.</p>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3>Choose Your Package</h3>
+                    <p>Select Basic or Premium based on your needs and budget.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                    </div>
+                    <h3>Fill In Your Details</h3>
+                    <p>Complete a quick form with your sea service, certifications, and experience.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>Receive Your CV</h3>
+                    <p>Get your polished, recruiter-ready CV delivered to your email in minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="features">
+        <div class="container">
+            <p class="section-label">Our Advantages</p>
+            <h2 class="section-title">Why Choose <span class="accent">SeaCV Pro</span>?</h2>
+            <p class="section-subtitle">Built by a marine engineer who understands the maritime industry inside and out.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>AI-Powered</h3>
+                    <p>Our AI generates professional CVs in minutes, not days. Same quality as a $100+ CV writer, at a fraction of the cost.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <h3>Maritime-Specific</h3>
+                    <p>Built by a marine engineer who has served on LNG carriers. We know exactly what manning agencies and recruiters look for.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>ATS-Friendly</h3>
+                    <p>Optimized formatting that passes through Applicant Tracking Systems used by recruitment agencies worldwide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>3 Departments Covered</h3>
+                    <p>Specialized prompts and formatting for Deck department, Engine department, and Ratings. Your CV speaks your role.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <p class="section-label">Pricing</p>
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">No hidden fees. No subscriptions. Pay once, get your CV.</p>
+            <div style="text-align:center;margin-bottom:32px;">
+                <span style="display:inline-block;background:rgba(100,255,218,0.1);border:1px solid rgba(100,255,218,0.3);color:var(--accent);padding:8px 24px;border-radius:20px;font-size:0.9rem;font-weight:600;">Limited Launch Price &mdash; First 50 Users</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Basic</h3>
+                    <div class="price">$15 <small>one-time</small></div>
+                    <ul class="price-features">
+                        <li><span class="check">&#10003;</span> Professional AI-generated CV</li>
+                        <li><span class="check">&#10003;</span> PDF format, email delivery</li>
+                        <li><span class="check">&#10003;</span> ATS-friendly formatting</li>
+                        <li><span class="check">&#10003;</span> Department-specific content</li>
+                        <li><span class="check">&#10003;</span> Delivery within 15 minutes</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/3cI4gAds88Jaaet6UQ7g402" class="btn btn-outline">Get Basic CV &mdash; $15</a>
+                </div>
+                <div class="price-card featured">
+                    <div class="price-badge">MOST POPULAR</div>
+                    <h3>Premium</h3>
+                    <div class="price">$25 <small>one-time</small></div>
+                    <ul class="price-features">
+                        <li><span class="check">&#10003;</span> Everything in Basic</li>
+                        <li><span class="check">&#10003;</span> Professional Cover Letter</li>
+                        <li><span class="check">&#10003;</span> LinkedIn Profile Optimization</li>
+                        <li><span class="check">&#10003;</span> Priority Delivery</li>
+                        <li><span class="check">&#10003;</span> Free revision included</li>
+                    </ul>
+                    <div style="margin-bottom:16px;padding:12px;background:rgba(100,255,218,0.05);border-radius:8px;border:1px solid rgba(100,255,218,0.1);">
+                        <p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:4px;text-decoration:line-through;">Total value: $40+</p>
+                        <p style="font-size:0.95rem;color:var(--accent);font-weight:700;">Today: $25</p>
+                    </div>
+                    <a href="https://buy.stripe.com/cNidRads84sUbixfrm7g401" class="btn btn-primary">Get Premium Package &mdash; $25</a>
+                </div>
+            </div>
+            <p style="text-align:center;margin-top:32px;color:var(--text-dim);font-size:0.95rem;">
+                Secure payment via Stripe. Choose your package above &mdash; you'll fill in your details after payment.
+            </p>
+        </div>
+    </section>
+
+    <!-- SAMPLE CV -->
+    <section id="sample">
+        <div class="container">
+            <p class="section-label">Preview</p>
+            <h2 class="section-title">Sample CV Preview</h2>
+            <p class="section-subtitle">Here's what a SeaCV Pro CV looks like. Clean, professional, recruiter-ready.</p>
+            <div class="cv-preview-wrapper">
+                <div class="cv-preview">
+                    <div class="cv-header-block">
+                        <h3>JUAN DELA CRUZ</h3>
+                        <p>Third Engineer Officer | B.Sc. Marine Engineering<br>Manila, Philippines | +63 912 XXX XXXX | juan.delacruz@email.com</p>
+                    </div>
+                    <div class="cv-section">
+                        <h4>Professional Summary</h4>
+                        <p>Dedicated Third Engineer Officer with 5+ years of experience on LNG carriers and bulk carriers. STCW certified with strong background in engine room operations, maintenance planning, and ISM compliance.</p>
+                    </div>
+                    <div class="cv-section">
+                        <h4>Certificates &amp; Licenses</h4>
+                        <ul>
+                            <li>COC III/1 &mdash; Officer in Charge of Engineering Watch</li>
+                            <li>STCW Basic Safety Training (BST)</li>
+                            <li>Advanced Fire Fighting | Medical First Aid</li>
+                            <li>Engine Room Simulator Certificate</li>
+                        </ul>
+                    </div>
+                    <div class="cv-section">
+                        <h4>Sea Service Record</h4>
+                        <ul>
+                            <li><strong>M/V Pacific Star</strong> &mdash; 3rd Engineer &mdash; LNG Carrier &mdash; 2023-2024</li>
+                            <li><strong>M/V Ocean Glory</strong> &mdash; 4th Engineer &mdash; Bulk Carrier &mdash; 2021-2023</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cv-cta">
+                    <a href="#pricing" class="btn btn-primary" style="margin-top:24px">Get Yours Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <p class="section-label">Testimonials</p>
+            <h2 class="section-title">What Seafarers Say</h2>
+            <p class="section-subtitle">We're just getting started. Here's early feedback from our customers.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Got my CV in 10 minutes. It looked better than what I paid $100 for last year. Highly recommended for any seafarer."</p>
+                    <div class="testimonial-author">Mark R.</div>
+                    <div class="testimonial-role">2nd Officer, Bulk Carrier</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"The engine department formatting was spot on. Recruiters called me back within a week of sending this CV out."</p>
+                    <div class="testimonial-author">Arjun P.</div>
+                    <div class="testimonial-role">3rd Engineer, Tanker</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Super fast and affordable. The cover letter in the Premium package was a great bonus. Telling all my batchmates."</p>
+                    <div class="testimonial-author">Rizal S.</div>
+                    <div class="testimonial-role">Able Seaman</div>
+                </div>
+                <div class="testimonial-card" style="border-color:rgba(100,255,218,0.25)">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"I used SeaCV Pro for my own CV after 1,385+ days at sea on LNG carriers. The AI nailed every detail &mdash; vessel specs, engine types, certifications. I got interview calls within days."</p>
+                    <div class="testimonial-author">Sharwen S.</div>
+                    <div class="testimonial-role">4th Engineer, LNG Carrier &mdash; Founder</div>
+                </div>
+            </div>
+            <p style="text-align:center;margin-top:32px;color:var(--text-dim);font-size:0.9rem;font-style:italic;">More reviews coming soon as we serve our first customers!</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our service.</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">How fast will I receive my CV? <span class="icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Within 15 minutes of submitting your details. Premium package customers get priority delivery.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What departments do you cover? <span class="icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Engine, Deck, and Ratings &mdash; each with specialized formatting and content tailored to your department's requirements.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I request revisions? <span class="icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes! Simply reply to the delivery email with your revision requests. Premium customers get one free revision included.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What format is the CV in? <span class="icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Professional PDF format, ready to send directly to recruiters and manning agencies.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is my data secure? <span class="icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes. We only use your data to generate your CV. Your personal information is never shared with third parties or stored longer than necessary.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How is this different from other CV services? <span class="icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">We use AI specifically trained for maritime CVs, built by a marine engineer. Competitors charge $80&ndash;$150 and take days. We deliver in minutes for $15&ndash;$25 with the same professional quality.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Create Your Maritime CV Now</h2>
+            <p>Takes less than 5 minutes. Delivered to your email instantly.</p>
+            <a href="#pricing" class="btn btn-primary">Generate My Maritime CV</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Sea<span>CV</span> Pro</a>
+                    <p>Professional AI-powered maritime CVs for seafarers worldwide. Built by a marine engineer who understands the industry.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#sample">Sample CV</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal &amp; Contact</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="mailto:sharwenmac21@gmail.com">sharwenmac21@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI Maritime CV Service by Sharwen. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="LinkedIn">LI</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">X</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/60112197858?text=Hi%20Sharwen%2C%20I%27m%20interested%20in%20the%20SeaCV%20Pro%20service" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Open clicked if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
